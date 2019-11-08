@@ -18,4 +18,9 @@ class Genre
   def artists
     songs.map(&:artist)
   end
+  
+  # def new_song(name, genre)
+  #   Song.new(name, self, self.artist)
+  # end
+  
 end
