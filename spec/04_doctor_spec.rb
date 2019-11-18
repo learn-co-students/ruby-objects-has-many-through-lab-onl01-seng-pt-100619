@@ -8,6 +8,7 @@ describe 'Doctor' do
     end
   end
 
+
   describe '#new' do
     it 'initializes with a name and adds itself to an array of all doctors' do
       doctor_smith = Doctor.new('John Smith')
@@ -15,6 +16,7 @@ describe 'Doctor' do
       expect(Doctor.all).to include(doctor_smith)
     end
   end
+
 
   describe '#appointments' do
     it 'returns all appointments associated with this Doctor' do
@@ -27,8 +29,10 @@ describe 'Doctor' do
       expect(doctor_who.appointments).to include(appointment)
       expect(doctor_smith.appointments).to include(appointment_2)
 
+
     end
   end
+
 
   describe '#new_appointment' do
     it 'given a date and a patient, creates a new appointment' do
@@ -40,11 +44,13 @@ describe 'Doctor' do
     end
   end
 
+
   describe '#patients' do
     it 'has many patients, through appointments' do
       doctor_who = Doctor.new('The Doctor')
       hevydevy = Patient.new('Devin Townsend')
       doctor_who.new_appointment(hevydevy, 'Friday, January 32nd')
+
 
       expect(doctor_who.patients).to include(hevydevy)
     end
